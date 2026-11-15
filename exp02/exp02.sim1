@@ -1,0 +1,59 @@
+<circuit version="1.1.0-SR2" rev="260312" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="Subcircuit" CircId="Uno-1" mainComp="false" Show_id="true" Show_Val="false" Pos="-88,-80" rotation="0" hflip="1" vflip="1" label="Uno-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Logic_Symbol="false">
+<mainCompProps MainCompId="mega328-109" Frequency="16 MHz" Program="exp02.hex" Auto_Load="true" saveEepr="true" MainMcu="true" SerialMon="-1" />
+</item>
+
+<item itemtype="KeyPad" CircId="KeyPad-2" mainComp="false" Show_id="false" Show_Val="false" Pos="-212,-12" rotation="0" hflip="1" vflip="1" label="KeyPad-2" idLabPos="-8,-16" labelrot="0" valLabPos="-16,20" valLabRot="0" Rows="4" Cols="4" Key_Labels="123+456-789*.0=/" />
+
+<item itemtype="Hd44780" CircId="Hd44780-4" mainComp="false" Show_id="true" Show_Val="false" Pos="-140,-132" rotation="0" hflip="1" vflip="1" label="Hd44780-4" idLabPos="70,-82" labelrot="0" valLabPos="-16,20" valLabRot="0" Rows="2" Cols="16" />
+
+<item itemtype="Connector" uid="Connector-18" startpinid="Hd44780-4-PinRS" endpinid="Uno-1-8" pointList="-124,-124,-124,8,-80,8" />
+
+<item itemtype="Connector" uid="Connector-20" startpinid="Hd44780-4-dataPin4" endpinid="Uno-1-10" pointList="-68,-124,-68,24,-80,24" />
+
+<item itemtype="Connector" uid="Connector-21" startpinid="Hd44780-4-dataPin5" endpinid="Uno-1-11" pointList="-60,-124,-60,32,-80,32" />
+
+<item itemtype="Connector" uid="Connector-22" startpinid="Hd44780-4-dataPin6" endpinid="Uno-1-12" pointList="-52,-124,-52,40,-80,40" />
+
+<item itemtype="Connector" uid="Connector-23" startpinid="Hd44780-4-dataPin7" endpinid="Uno-1-13" pointList="-44,-124,-44,48,-80,48" />
+
+<item itemtype="Connector" uid="Connector-62" startpinid="Hd44780-4-PinRW" endpinid="Uno-1-GND2" pointList="-116,-124,-116,56,-80,56" />
+
+<item itemtype="Connector" uid="Connector-68" startpinid="Hd44780-4-PinEn" endpinid="Uno-1-2" pointList="-108,-124,-108,-48,-80,-48" />
+
+<item itemtype="Connector" uid="Connector-26" startpinid="KeyPad-2-Pin1" endpinid="Uno-1-A4" pointList="-148,12,-144,12,-144,-100,84,-100,84,-56,64,-56" />
+
+<item itemtype="Connector" uid="Connector-27" startpinid="KeyPad-2-Pin2" endpinid="Uno-1-A3" pointList="-148,28,-140,28,-140,-96,80,-96,80,-48,64,-48" />
+
+<item itemtype="Connector" uid="Connector-28" startpinid="KeyPad-2-Pin3" endpinid="Uno-1-A2" pointList="-148,44,-136,44,-136,-92,76,-92,76,-40,64,-40" />
+
+<item itemtype="Connector" uid="Connector-29" startpinid="KeyPad-2-Pin7" endpinid="Uno-1-4" pointList="-164,60,-112,60,-112,-32,-80,-32" />
+
+<item itemtype="Connector" uid="Connector-33" startpinid="KeyPad-2-Pin6" endpinid="Uno-1-5" pointList="-180,60,-180,64,-108,64,-108,-24,-80,-24" />
+
+<item itemtype="Connector" uid="Connector-35" startpinid="KeyPad-2-Pin4" endpinid="Uno-1-7" pointList="-212,60,-212,72,-100,72,-100,-8,-80,-8" />
+
+<item itemtype="Connector" uid="Connector-25" startpinid="KeyPad-2-Pin0" endpinid="Uno-1-A5" pointList="-148,-4,-148,-104,88,-104,88,-64,64,-64" />
+
+<item itemtype="Connector" uid="Connector-34" startpinid="KeyPad-2-Pin5" endpinid="Uno-1-6" pointList="-196,60,-196,68,-104,68,-104,-16,-80,-16" />
+
+<item itemtype="Push" CircId="Push-101" mainComp="false" Show_id="true" Show_Val="false" Pos="-192,160" rotation="0" hflip="1" vflip="1" label="FUNCTION" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" Poles="1" />
+<item itemtype="Ground" CircId="Ground-101" mainComp="false" Show_id="true" Show_Val="false" Pos="-208,208" rotation="0" hflip="1" vflip="1" label="" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+<item itemtype="Connector" uid="Wire-Push-101-GND" startpinid="Push-101-pinP0" endpinid="Ground-101-Gnd" pointList="-208,160,-208,192" />
+<item itemtype="Push" CircId="Push-102" mainComp="false" Show_id="true" Show_Val="false" Pos="-32,160" rotation="0" hflip="1" vflip="1" label="HISTORY" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" Poles="1" />
+<item itemtype="Ground" CircId="Ground-102" mainComp="false" Show_id="true" Show_Val="false" Pos="-48,208" rotation="0" hflip="1" vflip="1" label="" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+<item itemtype="Connector" uid="Wire-Push-102-GND" startpinid="Push-102-pinP0" endpinid="Ground-102-Gnd" pointList="-48,160,-48,192" />
+<item itemtype="Push" CircId="Push-103" mainComp="false" Show_id="true" Show_Val="false" Pos="128,160" rotation="0" hflip="1" vflip="1" label="MODE" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" Poles="1" />
+<item itemtype="Ground" CircId="Ground-103" mainComp="false" Show_id="true" Show_Val="false" Pos="112,208" rotation="0" hflip="1" vflip="1" label="" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+<item itemtype="Connector" uid="Wire-Push-103-GND" startpinid="Push-103-pinP0" endpinid="Ground-103-Gnd" pointList="112,160,112,192" />
+<item itemtype="Connector" uid="Wire-FUNCTION" startpinid="Push-101-switch0pinN" endpinid="Uno-1-9" pointList="-176,160,-176,112,-92,112,-92,16,-80,16" />
+<item itemtype="Connector" uid="Wire-HISTORY" startpinid="Push-102-switch0pinN" endpinid="Uno-1-A0" pointList="-16,160,-16,120,112,120,112,-24,64,-24" />
+<item itemtype="Connector" uid="Wire-MODE" startpinid="Push-103-switch0pinN" endpinid="Uno-1-A1" pointList="144,160,160,160,160,-32,64,-32" />
+<item itemtype="Resistor" CircId="Resistor-104" mainComp="false" Show_id="true" Show_Val="false" Pos="-288,112" rotation="0" hflip="1" vflip="1" label="220 ohm" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Resistance="220 Ω" />
+<item itemtype="Led" CircId="Led-105" mainComp="false" Show_id="true" Show_Val="false" Pos="-352,112" rotation="180" hflip="1" vflip="1" label="UNLOCKED" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Green" Grounded="false" Threshold="2 V" MaxCurrent="20 mA" Resistance="0.6 Ω" />
+<item itemtype="Ground" CircId="Ground-106" mainComp="false" Show_id="true" Show_Val="false" Pos="-384,160" rotation="0" hflip="1" vflip="1" label="" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+<item itemtype="Connector" uid="Wire-LED-DRIVE" startpinid="Uno-1-3" endpinid="Resistor-104-rPin" pointList="-80,-40,-96,-40,-96,96,-256,96,-256,112,-272,112" />
+<item itemtype="Connector" uid="Wire-LED-ANODE" startpinid="Resistor-104-lPin" endpinid="Led-105-lPin" pointList="-304,112,-336,112" />
+<item itemtype="Connector" uid="Wire-LED-GND" startpinid="Led-105-rPin" endpinid="Ground-106-Gnd" pointList="-368,112,-384,112,-384,144" />
+</circuit>
