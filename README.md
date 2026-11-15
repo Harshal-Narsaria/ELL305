@@ -15,9 +15,9 @@ All sketches are for the **Arduino Uno (ATmega328P, 16 MHz)**. Each folder conta
 | 2 | [`exp02`](exp02) | Calculator and Digi-lock | `exp02.sim1` |
 | 3 | [`exp03`](exp03) | Quick-and-Dirty Function Generator | `exp03.sim1` |
 | 4 | [`exp04`](exp04) | Using the I2C Bus: Real-Time Clock | not built (see below) |
-| 5 | [`exp05`](exp05) | Audio Playback with Modulation | none |
+| 5 | [`exp05`](exp05) | Audio Playback with Modulation | none (built on hardware) |
 
-Experiments 0 to 3 and 5 were implemented on the Arduino and simulated in SimulIDE. **Experiment 4 was not built on hardware**, because the DS1307 real-time-clock module was not available in the laboratory. Its program compiles for the Uno and is given as a design.
+Experiments 0 to 3 were implemented on the Arduino and simulated in SimulIDE. **Experiment 5 was built and tested on hardware.** **Experiment 4 was not built on hardware**, because the DS1307 real-time-clock module was not available in the laboratory. Its program compiles for the Uno and is given as a design.
 
 ---
 
@@ -138,6 +138,8 @@ The structs are defined in `types.h`, because the Arduino IDE inserts function p
 ## Experiment 5: Audio Playback with Modulation
 
 **Aim.** Play audio through an 8-bit parallel DAC0800 and an LM386 amplifier, with potentiometers controlling amplitude and frequency.
+
+**Status: built and tested on hardware.** The analog stage uses the standard circuits from the DAC0800 and LM386 datasheets: a 5 kohm reference resistor, an op-amp current-to-voltage converter, a 10 µF coupling capacitor, the LM386 at its default gain of 20, and a 220 µF output capacitor to the speaker.
 
 **Circuit and working.**
 - **DAC bus:** D2 to D9 form the 8-bit bus, from D2 to DAC pin 12 (LSB) up to D9 to pin 5 (MSB). It is written with two port stores (`PORTD`, `PORTB`), so all eight bits change within a few cycles.
