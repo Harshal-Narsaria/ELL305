@@ -21,6 +21,30 @@ The project measures what limits the error-free speed of the ATmega328P UART on 
 
 All programs are for the Arduino Uno and print their results as CSV on the Serial Monitor at 9600 baud. Remove the wire from pin 0 while uploading.
 
+**Oscilloscope photographs.** The report is a single LaTeX file, so its oscilloscope figures are redrawn from the measured readouts. The photographs of the screen (Tektronix TDS1002) and of the bench are in [`project/photos`](project/photos):
+
+| File | Shows |
+|---|---|
+| [`mode0_A_frame_D1_100usdiv.jpg`](project/photos/mode0_A_frame_D1_100usdiv.jpg) | Mode 0: one 'A' (0x41) frame on D1 at 9600 baud, 100 us/div |
+| [`mode1_D8_D9_readouts_2p5usdiv.jpg`](project/photos/mode1_D8_D9_readouts_2p5usdiv.jpg) | Mode 1 (1 Mbaud, interrupts): D8 and D9 with period and width readouts (report Figure 4a) |
+| [`mode2_D8_D10_losses_10usdiv.jpg`](project/photos/mode2_D8_D10_losses_10usdiv.jpg) | Mode 2: D8 and the D10 loss marker, 10 us/div (report Figure 5) |
+| [`mode2_D8_D9_readouts_2p5usdiv.jpg`](project/photos/mode2_D8_D9_readouts_2p5usdiv.jpg) | Mode 2 (2 Mbaud, interrupts): D8 and D9, D9 flat low (report Figure 4b) |
+| [`mode3_D10_flat_100mVdiv_crosstalk.jpg`](project/photos/mode3_D10_flat_100mVdiv_crosstalk.jpg) | Mode 3: D10 at 100 mV/div, crosstalk from D1 only |
+| [`mode3_D1_D10_backtoback_2p5usdiv.jpg`](project/photos/mode3_D1_D10_backtoback_2p5usdiv.jpg) | Mode 3 (2 Mbaud, polled): frames back to back on D1, D10 flat (report Figure 6) |
+| [`pitfall_10nF_fall_10X_uncompensated_swapped.jpg`](project/photos/pitfall_10nF_fall_10X_uncompensated_swapped.jpg) | Pitfall: uncompensated 10X probe on the RC edge |
+| [`pitfall_2M_frames_probe_10x_mismatch.jpg`](project/photos/pitfall_2M_frames_probe_10x_mismatch.jpg) | Pitfall: probe 1X/10X setting mismatch |
+| [`pitfall_averaging_3_trigger_alignments.jpg`](project/photos/pitfall_averaging_3_trigger_alignments.jpg) | Pitfall: averaging with the trigger firing on three edges of one frame |
+| [`pitfall_stuck_mode2_smear.jpg`](project/photos/pitfall_stuck_mode2_smear.jpg) | Pitfall: Auto trigger at 2 Mbaud |
+| [`rc_10nF_rise_5p50us_2p5usdiv.jpg`](project/photos/rc_10nF_rise_5p50us_2p5usdiv.jpg) | RC line, 10 nF: rising edge on pin 0, rise time 5.50 us (report Figure 8a) |
+| [`rc_5nF_series_rise_2p88us_5usdiv_front.jpg`](project/photos/rc_5nF_series_rise_2p88us_5usdiv_front.jpg) | RC line, two 10 nF in series: repeat reading |
+| [`rc_5nF_series_rise_2p96us_5usdiv.jpg`](project/photos/rc_5nF_series_rise_2p96us_5usdiv.jpg) | RC line, two 10 nF in series: rise time 2.96 us (report Figure 8b) |
+| [`rc_rise_17p32us_10usdiv_CAP-TBC.jpg`](project/photos/rc_rise_17p32us_10usdiv_CAP-TBC.jpg) | RC line, larger capacitor: rise time 17.32 us |
+| [`setup_bench_overview.jpg`](project/photos/setup_bench_overview.jpg) | Bench: Uno, breadboard and oscilloscope |
+| [`setup_breadboard_pin0_connected.jpg`](project/photos/setup_breadboard_pin0_connected.jpg) | RC line on the breadboard |
+| [`setup_early_breadboard.jpg`](project/photos/setup_early_breadboard.jpg) | Early breadboard set-up |
+| [`setup_partA_header_wiring.jpg`](project/photos/setup_partA_header_wiring.jpg) | Loopback and debug-pin wiring |
+| [`setup_partB_breadboard_series_pair.jpg`](project/photos/setup_partB_breadboard_series_pair.jpg) | RC line with two capacitors in series |
+
 **Documentation.** The code is documented with Doxygen comments. To build the HTML pages, install Doxygen and run `doxygen` in the repository root (it reads [`Doxyfile`](Doxyfile)); the pages are written to `docs/html`.
 
 ---
