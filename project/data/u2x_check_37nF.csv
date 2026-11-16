@@ -1,0 +1,33 @@
+# uart_u2x_check.ino: same baud in normal and U2X mode, counting pattern, polled, N=10000. Line: pin 1 -> 330 ohm -> pin 0, 37 nF (measured with a multimeter) from pin 0 to GND
+# Run 1 of the first four tests (62500 both modes, 125000 both modes) is suspect: got 0 then a partial 6888 looks like the pin-0 lead being plugged in after the sketch had started. Not used in the comparison.
+baud,mode,ubrr,run,got,wrong,frame,over,suspect
+62500,Normal,15,1,0,0,0,0,yes
+62500,Normal,15,2,7998,7787,709,0,
+62500,Normal,15,3,8197,7945,642,0,
+62500,U2X,31,1,0,0,0,0,yes
+62500,U2X,31,2,7894,7699,782,0,
+62500,U2X,31,3,7894,7727,821,0,
+125000,Normal,7,1,0,0,0,0,yes
+125000,Normal,7,2,7894,7582,40,0,
+125000,Normal,7,3,7894,7582,40,0,
+125000,U2X,15,1,6888,6615,35,0,yes
+125000,U2X,15,2,7894,7582,40,0,
+125000,U2X,15,3,7894,7582,39,0,
+250000,Normal,3,1,5556,5128,224,0,
+250000,Normal,3,2,5647,5235,143,0,
+250000,Normal,3,3,5762,5288,140,0,
+250000,U2X,7,1,5404,4974,207,0,
+250000,U2X,7,2,5487,5055,206,0,
+250000,U2X,7,3,5636,5160,157,0,
+500000,Normal,1,1,2649,2411,344,0,
+500000,Normal,1,2,2708,2459,350,0,
+500000,Normal,1,3,2751,2522,368,0,
+500000,U2X,3,1,2515,2283,287,0,
+500000,U2X,3,2,2583,2337,294,0,
+500000,U2X,3,3,2626,2408,302,0,
+1000000,Normal,0,1,873,818,264,0,
+1000000,Normal,0,2,889,829,253,0,
+1000000,Normal,0,3,920,864,252,0,
+1000000,U2X,1,1,856,796,271,0,
+1000000,U2X,1,2,881,816,257,0,
+1000000,U2X,1,3,892,842,257,0,

@@ -1,0 +1,14 @@
+# Scope measurements of the RC edge on D0 (Tektronix TDS1002, 1X probes, Average 16), 2026-11-06.
+# Circuit: D1 -> 330 ohm -> D0, capacitor D0 -> GND; uart_demo mode 0 ('A' at 9600 every ~2 ms). Trigger CH1 (D0) rising.
+# tau = rise_time / 2.2 (10-90%). R_eff = 268 ohm from the 10 nF V_low (1.2 V / 4.88 V -> R_pullup ~1.09 kohm, R_series ~355 ohm).
+# C_eff = tau / 268 ohm (includes the 1X probe, ~50-100 pF). C_multimeter = value measured with a multimeter.
+C_label,C_multimeter_nF,rise_time_us,fall_time_us,V_min,V_max,tau_us,tau_pred_us,C_eff_nF,C_eff_over_multimeter
+10nF,10,5.74,,1.2,4.88,2.61,2.68,9.74,0.97
+5nF_series_2x10nF,5,2.9,,,,1.32,1.34,4.92,0.98
+37nF,37,15,,,,6.82,9.92,25.4,0.69
+# First pass on 10 nF with uncompensated 10X probes (not used): fall 5.28 us, V_min 0.80 V, V_max 4.88 V; D1 min -0.44 V (probe undershoot). D1's own fall time 60 ns.
+# Photographed repeats (photos/ folder). Capacitor identified from the matching value; 17.32 us row awaiting confirmation of which part.
+10nF,10,5.50,,,,2.50,2.68,9.33,0.93
+5nF_series_2x10nF,5,2.88,,,,1.31,1.34,4.89,0.98
+5nF_series_2x10nF,5,2.96,,,,1.35,1.34,5.02,1.00
+TBC,,17.32,,,,7.87,,29.4,

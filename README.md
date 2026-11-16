@@ -21,6 +21,19 @@ The project measures what limits the error-free speed of the ATmega328P UART on 
 
 All programs are for the Arduino Uno and print their results as CSV on the Serial Monitor at 9600 baud. Remove the wire from pin 0 while uploading.
 
+**Measured data.** The raw results printed by the programs are in [`project/data`](project/data) as CSV files:
+
+| File | Contents |
+|---|---|
+| [`lean_results.csv`](project/data/lean_results.csv) | Fully polled loop with a plain wire, nine baud rates (report Table 11) |
+| [`rc_results.csv`](project/data/rc_results.csv) | Bytes received through 330 ohm + C for every capacitor and baud rate (report Table 20, Figure 9) |
+| [`rc_dump_10nF.csv`](project/data/rc_dump_10nF.csv) | Constant byte patterns through 10 nF, with bit-flip counts (report Table 13) |
+| [`scope_tau.csv`](project/data/scope_tau.csv) | Rise times and time constants read on the oscilloscope (report Table 12) |
+| [`2m_check_10nF.csv`](project/data/2m_check_10nF.csv) | Scaling check, 10 nF, five runs per setting (report Table 21) |
+| [`2m_check_20nF.csv`](project/data/2m_check_20nF.csv) | Scaling check, 20 nF (report Table 21) |
+| [`2m_check_5nF.csv`](project/data/2m_check_5nF.csv) | Scaling check, two 10 nF in series (report Table 21) |
+| [`u2x_check_37nF.csv`](project/data/u2x_check_37nF.csv) | Normal against double-speed sampling, 37 nF (report Table 22) |
+
 **Oscilloscope photographs.** The report is a single LaTeX file, so its oscilloscope figures are redrawn from the measured readouts. The photographs of the screen (Tektronix TDS1002) and of the bench are in [`project/photos`](project/photos):
 
 | File | Shows |
