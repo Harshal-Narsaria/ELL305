@@ -1,0 +1,15 @@
+# Doxygen configuration for the ELL305 UART project code.
+# Run "doxygen" in this folder; the HTML pages are written to docs/html.
+PROJECT_NAME           = "ELL305: Throughput Limits of a Microcontroller UART"
+PROJECT_BRIEF          = "ATmega328P (Arduino Uno) UART loopback tests"
+OUTPUT_DIRECTORY       = docs
+INPUT                  = project
+RECURSIVE              = YES
+FILE_PATTERNS          = *.ino *.h
+EXTENSION_MAPPING      = ino=C++
+EXTRACT_ALL            = YES
+EXTRACT_STATIC         = YES
+SOURCE_BROWSER         = YES
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+QUIET                  = YES

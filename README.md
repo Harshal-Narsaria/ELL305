@@ -1,4 +1,31 @@
-# ELP305 Embedded Lab: Experiments 0 to 5
+# ELL305 Project and ELP305 Experiments
+
+This repository has two parts:
+
+- [`project`](project): the complete code of the ELL305 (Computer Architecture, IIT Delhi) project, **Throughput Limits of a Microcontroller UART**.
+- [`exp00`](exp00) to [`exp05`](exp05): the first six ELP305 laboratory experiments, done as preparation for the project.
+
+## Project: Throughput Limits of a Microcontroller UART
+
+The project measures what limits the error-free speed of the ATmega328P UART on an Arduino Uno (16 MHz). The board sends bytes to itself through a wire from pin 1 (TX) to pin 0 (RX) and counts how many arrive.
+
+| Folder | Program | Wiring |
+|---|---|---|
+| [`project/uart_loopback`](project/uart_loopback) | Interrupt-driven transmit, polled receive: the main measurement | pin 1 to pin 0 |
+| [`project/uart_lean`](project/uart_lean) | Transmit and receive both polled, no interrupts | pin 1 to pin 0 |
+| [`project/uart_sweep`](project/uart_sweep) | Sweep of the extra work per byte at every baud rate | pin 1 to pin 0 |
+| [`project/uart_demo`](project/uart_demo) | Oscilloscope demonstration, modes 0 to 3, with debug pins D8, D9, D10 | pin 1 to pin 0; mode jumpers on D4 and D5 |
+| [`project/uart_rc_dump`](project/uart_rc_dump) | Constant-pattern test for the RC line: which bits go wrong | pin 1, 330 ohm, pin 0; capacitor from pin 0 to GND |
+| [`project/uart_2m_check`](project/uart_2m_check) | Check that transmission stays back to back at 2 Mbaud | same RC line |
+| [`project/uart_u2x_check`](project/uart_u2x_check) | Normal against double-speed sampling at the same baud rate | same RC line |
+
+All programs are for the Arduino Uno and print their results as CSV on the Serial Monitor at 9600 baud. Remove the wire from pin 0 while uploading.
+
+**Documentation.** The code is documented with Doxygen comments. To build the HTML pages, install Doxygen and run `doxygen` in the repository root (it reads [`Doxyfile`](Doxyfile)); the pages are written to `docs/html`.
+
+---
+
+## ELP305 Embedded Lab: Experiments 0 to 5
 
 Code, circuits and simulations for the first six ELP305 laboratory experiments ([experiment sheets](https://sites.google.com/view/embedded-lab/elp-305)). They were done as preparation for the ELL305 (Computer Architecture) project at IIT Delhi.
 
